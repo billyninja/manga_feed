@@ -1,5 +1,5 @@
 from datetime import datetime
-from converters import BaseConverter
+from converters.base import BaseConverter
 
 
 class Image:
@@ -23,7 +23,15 @@ class Chapter:
         self.date_added = date_added or datetime.today()
 
 
-class Author(object):
+class Genre:
+    """docstring for Genre"""
+
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
+
+
+class Author:
     """docstring for Author"""
 
     def __init__(self, first_name, last_name):
@@ -40,7 +48,7 @@ class Title:
         self.chapters = chapters
 
 
-class Package(object):
+class Package:
     """docstring for Package"""
 
     def __init__(self, title, converter, request_time, request_ip):
